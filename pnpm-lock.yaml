@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astro-github-elements/time':
+        specifier: ^0.1.4
+        version: 0.1.4
       '@astrojs/mdx':
         specifier: ^4.3.4
         version: 4.3.4(astro@5.13.2(@types/node@24.3.0)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.46.3)(typescript@5.9.2)(yaml@2.8.1))
@@ -35,6 +38,9 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       sharp:
         specifier: ^0.34.3
         version: 0.34.3
@@ -60,6 +66,9 @@ packages:
 
   '@antfu/utils@8.1.1':
     resolution: {integrity: sha512-Mex9nXf9vR6AhcXmMrlz/HVgYYZpVGJ6YlPgwl7UnaFpnshXs6EK/oa5Gpf3CzENMjkvEx2tQtntGnb7UtSTOQ==}
+
+  '@astro-github-elements/time@0.1.4':
+    resolution: {integrity: sha512-Inj7odhj5FbJ5bCaP6buFcelnMDJOAAftUP7UQA1UDwQ3A+Dwb7vsv1gbiwyCx5SoJaTQzycxO34/gOZF22i0w==}
 
   '@astrojs/compiler@2.12.2':
     resolution: {integrity: sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==}
@@ -290,6 +299,9 @@ packages:
 
   '@expressive-code/plugin-text-markers@0.41.3':
     resolution: {integrity: sha512-SN8tkIzDpA0HLAscEYD2IVrfLiid6qEdE9QLlGVSxO1KEw7qYvjpbNBQjUjMr5/jvTJ7ys6zysU2vLPHE0sb2g==}
+
+  '@github/relative-time-element@4.4.8':
+    resolution: {integrity: sha512-FSLYm6F3TSQnqHE1EMQUVVgi2XjbCvsESwwXfugHFpBnhyF1uhJOtu0Psp/BB/qqazfdkk7f5fVcu7WuXl3t8Q==}
 
   '@iconify/tools@4.1.2':
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==}
@@ -1148,6 +1160,9 @@ packages:
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -2757,6 +2772,10 @@ snapshots:
 
   '@antfu/utils@8.1.1': {}
 
+  '@astro-github-elements/time@0.1.4':
+    dependencies:
+      '@github/relative-time-element': 4.4.8
+
   '@astrojs/compiler@2.12.2': {}
 
   '@astrojs/internal-helpers@0.7.2': {}
@@ -2973,6 +2992,8 @@ snapshots:
   '@expressive-code/plugin-text-markers@0.41.3':
     dependencies:
       '@expressive-code/core': 0.41.3
+
+  '@github/relative-time-element@4.4.8': {}
 
   '@iconify/tools@4.1.2':
     dependencies:
@@ -3869,6 +3890,8 @@ snapshots:
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
+
+  date-fns@4.1.0: {}
 
   debug@4.4.1:
     dependencies:
