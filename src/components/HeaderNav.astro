@@ -1,0 +1,53 @@
+---
+import siteInfo from '~/data/site-info.js';
+import AstroLogo from './AstroLogo.astro';
+import HeaderDropDown from './HeaderDropDown.astro';
+import SocialLinks from './SocialLinks.astro';
+
+const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly);
+---
+
+<nav class="w-full flex items-center justify-between">
+	<a href="/" data-astro-prefetch title="Home" data-home-link>
+		<span class="sr-only">Astro Logo</span>
+		<AstroLogo />
+	</a>
+
+	<div class="hidden shrink flex-row items-center gap-12 lg:flex text-base">
+		<a href="/" class="link">Home</a>
+		<a href="/blog/" data-astro-prefetch class="link">Blog</a>
+		<HeaderDropDown label="Resources"
+			items={[
+                { href: '/tutorial', label: 'Tutorials', icon: 'open-book' },
+                { href: '/themes/', label: 'Themes', icon: 'palette', prefetch: true },
+                { href: '/integrations/', label: 'Configs', icon: 'layers', prefetch: true },
+			]}
+		/>
+		<HeaderDropDown label="Community"
+			items={[
+				{ href: '/chat/', label: 'Discord', icon: 'social/discord' },
+				{ href: '/chat/', label: 'Buy Me Coffee', icon: 'heart' },
+				{ href: 'https://shop.astro.build/', label: 'Merch', icon: 'shopping-bag' },
+			]}
+		/>
+		<HeaderDropDown label="Enterprise"
+			items={[
+				{ href: '/agencies/', label: 'Resume', icon: 'bag-briefcase', badge: 'New' }, // render in website as markdown with download button
+				{ href: '/showcase/', label: 'Projects', icon: 'browser-windows', prefetch: true },
+				{ href: '/case-studies/', label: 'Studies', icon: 'file-alt', prefetch: true },
+			]}
+		/>
+	</div>
+
+	<div class="hidden gap-4 lg:flex">
+		<SocialLinks links={socialLinks} />
+	</div>
+</nav>
+
+<script>
+	import { getElement } from '~/helpers/dom.js';
+	getElement('[data-home-link]', HTMLAnchorElement).addEventListener('contextmenu', (event) => {
+		event.preventDefault();
+		window.location.href = '/press#assets';
+	});
+</script>

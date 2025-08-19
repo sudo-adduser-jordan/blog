@@ -1,57 +1,62 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import type { ImageMetadata } from 'astro';
-import FallbackImage from '../assets/blog-placeholder-1.jpg';
-import { SITE_TITLE } from '../consts';
+import smartypants from 'smartypants';
+import siteInfo from '~/data/site-info';
+import '~/styles/fonts.css';
+import Favicon from './Favicon.astro';
+import SEO from './SEO.astro';
 
-interface Props {
-	title: string;
-	description: string;
-	image?: ImageMetadata;
-}
+export type Props = {
+	title?: string;
+	rawTitle?: string;
+	description?: string;
+	image?: { src: string; alt: string };
+	canonicalURL?: URL | null;
+	pageType?: 'website' | 'article';
+};
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const twitterHandle = 'astrodotbuild';
 
-const { title, description, image = FallbackImage } = Astro.props;
+const {
+	rawTitle,
+	description = siteInfo.description,
+	image = siteInfo.image,
+	canonicalURL = new URL(Astro.request.url, Astro.site),
+	pageType = 'website',
+} = Astro.props;
+
+const title = rawTitle ?? [Astro.props.title, siteInfo.name].filter(Boolean).join(' | ');
+const resolvedImage = {
+	// src: new URL(image.src, Astro.site).toString(),
+	alt: image.alt,
+};
 ---
 
-<!-- Global Metadata -->
+<!-- High Priority Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
+<meta name="viewport" content="width=device-width" />
+<title set:html={smartypants(title, 1)} />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#8D46E7" />
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<!-- Fathom - beautiful, simple website analytics -->
+<!-- <script is:inline src="https://cdn.usefathom.com/script.js" data-site="EZBHTSIG" defer></script> -->
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<!-- Font preloads, omit MDIO to improve initial load -->
+<!-- <link rel="preload" href="/fonts/Obviously.woff2?v=1" as="font" type="font/woff2" crossorigin /> -->
+<!-- <link rel="preload" href="/fonts/Inter.woff2?v=1" as="font" type="font/woff2" crossorigin /> -->
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<!-- Low Priority Global Metadata -->
+<Favicon />
+<link rel="mask-icon" href="/favicon.svg" color="#8D46E7" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<SEO
+	name={siteInfo.name}
+	title={title}
+	description={description}
+	image={resolvedImage}
+	twitter={{ handle: twitterHandle }}
+	og={{ type: pageType }}
+	canonicalURL={canonicalURL}
+/>
