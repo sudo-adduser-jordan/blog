@@ -13,7 +13,6 @@ import houston from './houston.theme.json';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://sudo-adduser-jordan.github.io',
-    base: 'test',
 	integrations: [sitemap(), 
         tailwind({ applyBaseStyles: false }),
         astroExpressiveCode({
