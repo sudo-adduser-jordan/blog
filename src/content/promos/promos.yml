@@ -7,10 +7,10 @@ agencies:
     src: ./meteor.webp
     alt: ''
 
-swag:
-  href: https://shop.astro.build/
-  title: New merch!
-  description: Support Me with custom shirts, stickers, hats, and more from the shop&nbsp;→
-  image:
-    src: ./swag.webp
-    alt: ''
+# swag:
+#   href: https://shop.astro.build/
+#   title: New merch!
+#   description: Support Me with custom shirts, stickers, hats, and more from the shop&nbsp;→
+#   image:
+#     src: ./swag.webp
+#     alt: ''
