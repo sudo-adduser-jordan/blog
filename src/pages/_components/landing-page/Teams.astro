@@ -1,0 +1,101 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const logos = [
+	{ icon: 'logos/google', label: 'Google', classes: 'h-6 sm:h-9 translate-y-0.5' },
+	{ icon: 'logos/unilever', label: 'Unilever', classes: 'h-9 sm:h-14' },
+	{ icon: 'logos/visa', label: 'Visa', classes: 'h-4 sm:h-6' },
+	{ icon: 'logos/microsoft', label: 'Microsoft', classes: 'h-4 sm:h-6' },
+	{ icon: 'logos/porsche', label: 'Porsche', classes: 'h-2 sm:h-3.5' },
+	{ icon: 'logos/open-ai', label: 'OpenAI', classes: 'h-6 sm:h-9' },
+	{ icon: 'logos/netlify', label: 'Netlify', classes: 'h-8 sm:h-12' },
+	{ icon: 'logos/nordvpn', label: 'NordVPN', classes: 'h-5 sm:h-8' },
+	{ icon: 'logos/cloudflare', label: 'Cloudflare', classes: 'h-6 sm:h-9' },
+	{ icon: 'logos/nbc-news', label: 'NBC News', classes: 'h-3 sm:h-5' },
+	{ icon: 'logos/theguardian', label: 'The Guardian', classes: 'h-5 sm:h-8' },
+	{ icon: 'logos/michelin', label: 'Michelin', classes: 'h-6 sm:h-9' },
+	{ icon: 'logos/proton', label: 'Proton', classes: 'h-4 sm:h-6' },
+] satisfies Array<{ icon: string; label: string; classes?: string }>;
+---
+
+<div
+	class="mt-8 sm:mt-16 xs:p-6 mx-auto w-full max-w-screen-lg xl:max-w-screen-2xl space-y-5 sm:space-y-8 p-4 sm:p-8"
+>
+	<div class="landing-section gap-4 sm:gap-6">
+		<!-- <p class="font-light text-balance">Employeed by the largest companies around the world:</p> -->
+
+		 <div
+			class="astro-user-logos flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-10 sm:gap-y-8 px-4 max-h-64 -mb-16 sm:mb-0           
+            w-full"
+		> 
+<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="200" preserveAspectRatio="none" viewBox="0 0 1440 200">
+    <g mask="url(&quot;#SvgjsMask1086&quot;)" fill="none">
+        <path d="M196 98L1045 97" stroke-width="10" stroke="url(&quot;#SvgjsLinearGradient1087&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M544 143L160 142" stroke-width="8" stroke="url(&quot;#SvgjsLinearGradient1087&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M281 27L999 26" stroke-width="6" stroke="url(&quot;#SvgjsLinearGradient1087&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M855 75L446 74" stroke-width="6" stroke="url(&quot;#SvgjsLinearGradient1088&quot;)" stroke-linecap="round" class="Left"></path>
+        <path d="M941 76L443 75" stroke-width="8" stroke="url(&quot;#SvgjsLinearGradient1088&quot;)" stroke-linecap="round" class="Left"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1086">
+            <rect width="1440" height="200" fill="#ffffff"></rect>
+        </mask>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="SvgjsLinearGradient1087">
+            <stop stop-color="rgba(255, 255, 255, 0)" offset="0"></stop>
+            <stop stop-color="rgba(255, 255, 255, 1)" offset="1"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="0%" id="SvgjsLinearGradient1088">
+            <stop stop-color="rgba(255, 255, 255, 0)" offset="0"></stop>
+            <stop stop-color="rgba(255, 255, 255, 1)" offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+ -->
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="200" preserveAspectRatio="none" viewBox="0 0 1440 200">
+    <g mask="url(&quot;#SvgjsMask1107&quot;)" fill="none">
+        <path d="M247 132L-551 131" stroke-width="6" stroke="url(&quot;#SvgjsLinearGradient1108&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M351 107L-632 106" stroke-width="8" stroke="url(&quot;#SvgjsLinearGradient1108&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M1263 150L801 149" stroke-width="8" stroke="url(&quot;#SvgjsLinearGradient1109&quot;)" stroke-linecap="round" class="Left"></path>
+        <path d="M1136 28L1828 27" stroke-width="6" stroke="url(&quot;#SvgjsLinearGradient1108&quot;)" stroke-linecap="round" class="Right"></path>
+        <path d="M1209 191L592 190" stroke-width="10" stroke="url(&quot;#SvgjsLinearGradient1108&quot;)" stroke-linecap="round" class="Right"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1107">
+            <rect width="1440" height="200" fill="#ffffff"></rect>
+        </mask>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="SvgjsLinearGradient1108">
+            <stop stop-color="rgba(255, 255, 255, 0)" offset="0"></stop>
+            <stop stop-color="rgba(255, 255, 255, 1)" offset="1"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="0%" id="SvgjsLinearGradient1109">
+            <stop stop-color="rgba(255, 255, 255, 0)" offset="0"></stop>
+            <stop stop-color="rgba(255, 255, 255, 1)" offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<style>
+	.astro-user-logos {
+		mask-image: linear-gradient(to bottom, white, white 33%, transparent);
+		mask-size: 100% 16rem;
+	}
+
+	@media (min-width: 640px) {
+		.astro-user-logos {
+			mask-image: none;
+		}
+	}
+</style>
