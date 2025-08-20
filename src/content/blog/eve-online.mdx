@@ -4,7 +4,7 @@ description: 'Running windows programs on any linux distribution.'
 homepageLink:
   title: 'Eve OnLinux'
   subtitle: 'A Gamers Guide'
-publishDate: '2420-06-10'
+publishDate: '2025-08-19'
 authors:
   - jordan
 coverImage: '/src/content/blog/_images/eve-online3.png'
@@ -22,115 +22,157 @@ import BlogContentImage from '/src/components/BlogContentImage.astro';
 
 ## Eve OnLinux A Gamers Guide
 
-Due to the reoccuring questions in the linux Discord channel this guide has been created.
+Due to the reoccurring questions in the official Eve Online linux [*Discord*](https://discord.com/channels/940573867192221696/1096046348421312574) channel this guide has been created.
 
-To update this guide please contribute or file an issue here [`https://github.com/sudo-adduser-jordan/sudo-adduser-jordan.github.io`](https://github.com/sudo-adduser-jordan/sudo-adduser-jordan.github.io). 
+To update this guide please contribute or file an issue here: 
+
+[*GitHub*](https://github.com/sudo-adduser-jordan/sudo-adduser-jordan.github.io)
+
+Thanks.
 
 ### Overview
 
-First make sure you hardware meets the specifications listed here link.
+First make sure you hardware meets the specifications listed [*here*](https://support.eveonline.com/hc/en-us/articles/5885219196828-System-Requirements).
 
-Then choose a distribution and a listed option. It doesn't matter, they all will work with the correct configurations.
+Then choose a *distribution* and a listed option. *It doesn't matter which distribution*, they all will work with the correct configurations.
+
+The only difference is the chosen *package manager* and the *source* of the binaries.
 
 Some are more difficult to configure than others.
 
-No it does not matter what linux distribution you use.
+*No, it does not matter what linux distribution you use*
 
-The only way you will gain any performace from your hardware is by compiling the programs you are executing.
+The only way you will gain any performance from your hardware is by compiling the programs you are executing.
 
-This can be done on any distribution, but using Gentoos Portage Emerge is highly reccommended, as this will flag out many dependencies from the end binary.
+This can be done on *any distribution*, and using [*Gentoo's Portage Emerge*](https://wiki.gentoo.org/wiki/Portage) is highly recommended, as this will flag out many dependencies from the end binary. 
 
-All binary served repositories are Generic and flag in Everything into the end result.
+All binary served repositories are *Generic* and flag *Everything* into the end result.
 
-Again, to do this you must take the time to correctly configure your system.
+The performance gains doing this could be minimal or non existent.
 
-Which is what this guide aims to provide you.
+Also, all the following options run, on wine or a fork of wine maintained by another organization.
+
+Changing these will result in a similar outcome as the binaries. 
+
+*Just choose an option that works*. Some are more user friendly than others.
+
+*Bottles* and *Steam* are the recommended user friendly options.
 
 ### Options
-- bottles (highly reccommended, can use the same modified wine as steam)
-- steam
-- lutris
-- wine
+- *bottles* (highly recommended, can use the same modified wine as steam and other options)
+- *steam*
+- *lutris*
+- *wine*
 
 ### Linux Notes
-- compositors may affect performace 
 - any distribution works
 - xdg portals is required
-- debian requires testing branch or backports for updated drivers and / or nvida drivers ( debian has high quality binaries - the industry standard )
+- compositors may affect performance 
+- debian requires testing branch or backports for updated drivers and / or nvida drivers
 
-## > bottles
+## > Bottles
 
-1. Install flatpak
+1. *Install Flatpak*
 ```sh
-install program
+https://flatpak.org/setup/
 ```
-2. Install bottles
+
+2. *Install Bottles*
 ```sh
-install program
+flatpak install flathub com.usebottles.bottles
 ```
-3. Install xdg portals
+
+3. *Install XDG Portals*
+
+Possibly already installed, and only needed for external link functionality.
+
 ```sh
-install program
+https://wiki.archlinux.org/title/XDG_Desktop_Portal
 ```
-4. Configure xdg portals
-```sh
-install program
-```
-5. Install runners
-`Picture`
-6. Install graphics
-`Picture`
-7. Create bottle (wine container / vm / sandbox)
-`Picture`
-8. Click Install
-`Picture`
-9. Test xdg portals by opening a link in game
+4. *Install Runner*
+
+Install the *Kron4ek* runner.
+
 `Picture`
 
-## > steam
+7. *Create Bottle* 
 
-1. Install steam
+Create a *custom* bottle with the *Kron4ek* runner.
+
+`Picture`
+
+8. *Click Install*
+
+Click instal Eve Online from the *provided* program list in *bottles*.
+
+`Picture`
+
+9. Test Portals
+
+Once you have logged in. Test portals by opening an external link.
+
+`Picture`
+
+
+## > Steam
+
+1. Install Steam
 ```sh
-install program
+https://store.steampowered.com/about/
 ```
-2. Install eve online
-`Picture`
-3. Existing Player Login
+
+2. Install Eve Online
+
 `Picture`
 
-## > lutris
+## > Lutris
 
 contribute here
 
 ```sh
 https://github.com/sudo-adduser-jordan/sudo-adduser-jordan.github.io
 ```
-`Picture`
 
-## > wine
+```sh
+https://lutris.net/
+```
 
+## > Wine
+s
 contribute here
 
 ```sh
 https://github.com/sudo-adduser-jordan/sudo-adduser-jordan.github.io
 ```
-`Picture`
 
-
-### Resouces
-
-```c
-link
-link
-link
-link
-link
-link
-link
-link
+```sh
+https://www.winehq.org/
 ```
 
+### Troubleshooting
+
+*Update your system and related programs before continuing!*
+
+This is likely the *cause* of your launcher an [*Electron*](https://www.electronjs.org/) application not launching.
+
+Usually it is a related mesa / wine update on the *SYSTEM* and your in your chosen *OPTION*.
+
+Next check bottles / wine for available *DXVK* , *VKD3D* , and *Runner* updates.
+
+If the runner is up to date, there are other runners available, downgrading is a possible option, but changing runners is a more likely solution.
+
+### Resources
+
 ```c
+bottles docs
+flathub setup 
+flatpak
+wine docs
+arch xdg portals docs
+gentoo xdg portals docs
+```
+___
+
 hello world  
 
 `hello world` 
@@ -140,6 +182,6 @@ hello world
 [hello world](https://github.com) 
 
 [`hello world`](https://github.com) 
+___
 
-```
 
